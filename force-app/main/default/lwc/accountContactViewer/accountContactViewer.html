@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Account Contact Viewer">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                name="accountPicklist"
+                label="Select Account"
+                value={selectedAccountId}
+                options={accountOptions}
+                onchange={handleAccountChange}>
+            </lightning-combobox>
+
+            <template if:true={contacts}>
+                <template for:each={contacts} for:item="contact">
+                    <p key={contact.Id}>{contact.FirstName} {contact.LastName} - {contact.Email}</p>
+                </template>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error: {error.body.message}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

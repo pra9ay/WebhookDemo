@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Account Details">
+        <lightning-record-view-form
+            record-id={recordId}
+            object-api-name={objectApiName}>
+
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="Phone"></lightning-output-field>
+                    <lightning-output-field field-name="Website"></lightning-output-field>
+                    <lightning-output-field field-name="Rating"></lightning-output-field>
+                    <lightning-output-field field-name="Industry"></lightning-output-field>
+                    <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+                    <lightning-output-field field-name="Type"></lightning-output-field>
+                </div>
+            </div>
+
+        </lightning-record-view-form>
+    </lightning-card>
+</template>

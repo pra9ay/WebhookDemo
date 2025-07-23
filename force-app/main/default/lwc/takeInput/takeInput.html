@@ -1,0 +1,13 @@
+<template>
+  <lightning-card title="User Input Form">
+    <div class="slds-p-around_medium">
+      <lightning-input label="First Name" value={firstName} onchange={handleInputChange} name="firstName"></lightning-input>
+      <lightning-input label="Last Name" value={lastName} onchange={handleInputChange} name="lastName"></lightning-input>
+      <lightning-input label="Email" type="email" value={email} onchange={handleInputChange} name="email"></lightning-input>
+      <lightning-input label="Phone" type="tel" value={phone} onchange={handleInputChange} name="phone"></lightning-input>
+      <lightning-input label="Title" value={title} onchange={handleInputChange} name="title"></lightning-input>
+
+      <lightning-button label="Save" onclick={handleSave} variant="brand" class="slds-m-top_medium"></lightning-button>
+    </div>
+  </lightning-card>
+</template>
