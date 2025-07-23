@@ -39,14 +39,14 @@ global with sharing class webhookDemoSubscriptionClass {
                     }
                 }
 
-                GitHub_Push_Details__c detail = new GitHub_Push_Details__c(); // Create a new GitHub_Push_Details__c object record 
-                detail.Commiter_Name__c = ps!=null?ps.name:'';
-                detail.Commiter_Email__c = ps!=null?ps.email:'';
+                GitHub_PushDetails__c detail = new GitHub_PushDetails__c(); // Create a new GitHub_Push_Details__c object record 
+                detail.Committer_Name__c = ps!=null?ps.name:'';
+                detail.Committer_Email__c = ps!=null?ps.email:'';
                 detail.Commit_Message__c = hc!=null?hc.message:'';
-                detail.Commit_Timestamp__c = hc!=null?hc.timestamp:'';
-                detail.Commited_URL__c = hc!=null?hc.url:'';
+                //detail.Commit_Timestamp__c = hc!=null?hc.timestamp:'';
+                detail.Committed_URL__c = hc!=null?hc.url:'';
                 detail.Repository_Name__c = repo;
-                detail.Modified_Compoents__c = hc!=null&&hc.modified!=null?String.join(hc.modified,','):'';
+                //detail.Modified_Compoents__c = hc!=null&&hc.modified!=null?String.join(hc.modified,','):'';
                 insert detail;
                 response.statusCode = 200;
                 response.responseBody = Blob.valueOf(JSON.serialize(new SFDCResponse('Success','Processed Successfully')));
